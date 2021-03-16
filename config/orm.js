@@ -19,8 +19,14 @@ const orm = {
 			cb(result)
 		})
 	},
-	updateOne: (cb) => {
-		let query = "UPDATE ?? SET ?? = ? WHERE id = ?"
+	updateOne: (table, colsObj, valueObj, cb) => {
+		let query = "UPDATE ?? SET ? WHERE ?"
+		connection.query(query,[table, colsObj, valueObj], (err, result) =>{
+			if(err){
+				throw err; 
+			}
+			cb(result);
+		});
 	}
 }
 
