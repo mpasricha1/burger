@@ -10,8 +10,14 @@ const orm = {
 			cb(result);
 		})
 	},
-	insertOne: (cb) => {
-		let query = "INSERT INTO ?? ?? VALUES (?)"
+	insertOne: (table, cols, vals, cb) => {
+		let query = "INSERT INTO ?? (??) VALUES (?)"; 
+		connection.query(query, [table, cols, vals], (err, result) => {
+			if(err){
+				throw err;
+			}
+			cb(result)
+		})
 	},
 	updateOne: (cb) => {
 		let query = "UPDATE ?? SET ?? = ? WHERE id = ?"

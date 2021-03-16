@@ -9,5 +9,10 @@ router.get("/", (req, res) =>{
 	})
 	res.render("index") 
 });
+router.get("/api/burgers", (req, res) =>{
+	let data = burgers.insert("burger_name", "Mushroom Burger", (result) =>{
+		res.json({id: result.insertId}); 
+	});
+})
 
 module.exports = router; 
