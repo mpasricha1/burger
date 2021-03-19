@@ -8,13 +8,12 @@ router.get("/", (req, res) =>{
 		let burgerData = {
 			burgers: data
 		};
-		console.log(data)
 		res.render("index", burgerData); 
 	})
 	
 });
 router.post("/api/burgers", (req, res) =>{
-	let data = burgers.insert("burger_name", "Mushroom Burger", (result) =>{
+	let data = burgers.insert("burger_name", req.body.name, (result) =>{
 		res.json({id: result.insertId}); 
 	});
 });
