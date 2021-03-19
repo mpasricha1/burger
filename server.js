@@ -2,7 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars")
 const routes = require("./controllers/burgers_controller.js")
 
-const PORT = process.env.Port || 5000; 
+const PORT = process.env.port || 5000; 
 
 const app = express(); 
 
