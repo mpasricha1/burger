@@ -18,6 +18,6 @@ app.use(routes);
 
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
 	console.log("Server listening on: http://localhost:" + PORT);
 })
