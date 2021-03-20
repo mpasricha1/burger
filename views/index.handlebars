@@ -14,21 +14,29 @@
 	<p>Enter a burger you want to eat and click "Submit"</p>
 
 	<div class="row">
+		<h4>Burgers to Eat!</h4>
 		<div class="col-md-6">
 			<div class="list-group" id="newburgers">
 				{{#each burgers}}
 					{{#unless devoured}}
-					<li class="list-group-item">{{burger_name}}<button class="devour-button" data-id="{{id}}"">Devour Me</button></li>
+					<div class="row">
+						<div class="col-md-4">
+							<li>{{burger_name}}</li>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary devour-button" data-id="{{id}}" >Devour Me</button>
+						</div>
+					</div>
 					{{/unless}}
 				{{/each}}
-
 			</div>
 		</div>
+		<h4>Devoured Burgers!</h4>
 		<div class="col-md-6">
 			<div class="list-group" id="eatburgers">
 				{{#each burgers}}
 					{{#if devoured}}
-					<li class="list-group-item">{{burger_name}}</li>
+					<li>{{burger_name}}</li>
 					{{/if}}
 				{{/each}}
 			</div>
