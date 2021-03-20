@@ -1,7 +1,22 @@
 li {
 	list-style-type:none;
+	padding-left:10px;
+}
+h1 {
+	text-align: center;
+	padding-bottom: 25px;
+}
+h4 {
+	padding-left:10px;
+}
+#devour-button{
+	padding-bottom:10px;
+}
+#newSubmit{
+	margin-top: 10px;
 }
 #inputArea {
-  display: flex;
-  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 100px;
 }
